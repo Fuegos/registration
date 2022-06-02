@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
+const path = require('path')
 const bcrypt = require('bcrypt')
 const User = require('./models/user')
 require('dotenv').config()
@@ -9,7 +10,7 @@ require('dotenv').config()
 const app = express()
 const urlencodeParser = bodyParser.urlencoded({ extended: false })
 app.use(bodyParser.json(), urlencodeParser);
-
+app.use(express.static(path.join(__dirname, 'client/build')));
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(
@@ -160,3 +161,7 @@ app.put("/api/user/:_id/unblock", verifyJWT, (req, res, next) => {
         .catch(next)
 })
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+  
