@@ -46,7 +46,6 @@ export default function Registration() {
         setUser(prevState => ({...prevState, password: event.target.value}))
     }
 
-
     return(
         <div className="container mt-5 border border-primary">
             <ErrorBar error={error} closeAlertError={closeAlertError} />
@@ -57,25 +56,39 @@ export default function Registration() {
                 <form onSubmit={handleSubmit} >
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Name</label>
-                        <input type="text" onChange={changeName} className="form-control" id="name" value={user.name} />
+                        <input 
+                            type="text" 
+                            onChange={changeName} 
+                            className="form-control" 
+                            id="name" 
+                            value={user.name} 
+                        />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" onChange={changeEmail} className="form-control" id="email" value={user.email} />
+                        <input 
+                            type="email" 
+                            onChange={changeEmail} 
+                            className="form-control" 
+                            id="email" 
+                            value={user.email} 
+                        />
                     </div>
                     <div className="mb-5">
                         <label htmlFor="password" className="form-label">Password</label>
-                        <input type="password" onChange={changePassword} className="form-control" id="password" value={user.password} />
+                        <input 
+                            type="password" 
+                            onChange={changePassword} 
+                            className="form-control" 
+                            id="password" 
+                            value={user.password} 
+                        />
                     </div>
                     <div className="d-grid mb-5">
                         <button type="submit" className="btn btn-primary btn-block">Confirm</button>
                     </div>
-                    
                 </form>
             </div>
-            
-            
         </div>
-        
     )
 }

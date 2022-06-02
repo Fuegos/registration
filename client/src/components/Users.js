@@ -80,7 +80,6 @@ export default function Users() {
                 null,
                 auth
             )
-            .then(res => console.log(res))
         })
         setCheckedUsers([])
     }
@@ -124,32 +123,32 @@ export default function Users() {
                 <div className="spinner-grow" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div> :
-                <table className="table border">
-                    <thead>
-                        <tr>
-                            <th>
-                                <input 
-                                    onChange={everyChecked} 
-                                    className="form-check-input" 
-                                    type="checkbox" 
-                                    checked={isEveryChecked}
-                                />
-                            </th>
-                            <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">E-mail</th>
-                            <th scope="col">Last login time</th>
-                            <th scope="col">Registration time</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {listUsers}
-                    </tbody>
-                </table>
+                <div className="table-responsive">
+                    <table className="table border">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input 
+                                        onChange={everyChecked} 
+                                        className="form-check-input" 
+                                        type="checkbox" 
+                                        checked={isEveryChecked}
+                                    />
+                                </th>
+                                <th scope="col">Id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Last login time</th>
+                                <th scope="col">Registration time</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {listUsers}
+                        </tbody>
+                    </table>
+                </div>   
             }
-            
         </div>
-        
     )
 }

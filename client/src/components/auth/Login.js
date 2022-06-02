@@ -57,23 +57,38 @@ export default function Login() {
                 <form onSubmit={handleLogin}>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" onChange={changeEmail} className="form-control" id="email" />
+                        <input 
+                            type="email" 
+                            onChange={changeEmail} 
+                            className="form-control" 
+                            id="email" 
+                        />
                     </div>
                     <div className="mb-5">
                         <label htmlFor="password" className="form-label">Password</label>
-                        <input type="password" onChange={changePassword} className="form-control" id="password" />
+                        <input 
+                            type="password" 
+                            onChange={changePassword} 
+                            className="form-control" 
+                            id="password" 
+                        />
                     </div>
                     <div className="row mb-5">
                         <div className="col d-grid gap-2">
                             <button type="submit" className="btn btn-primary">Login</button>
                         </div>
                         <div className="col d-grid">
-                            <button onClick={navigateToRegistration} type="submit" className="btn btn-primary">Registration</button>
+                            <button 
+                                onClick={navigateToRegistration} 
+                                type="submit" 
+                                className="btn btn-primary"
+                            >
+                                Registration
+                            </button>
                         </div>
                     </div>
                 </form>
-            </div>
-            
+            </div>           
         </div>
     )
 }

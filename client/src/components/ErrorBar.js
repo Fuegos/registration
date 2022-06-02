@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 export default function ErrorBar(props) {
     const error = props.error
 
