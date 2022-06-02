@@ -23,7 +23,7 @@ const userSchema = new Schema({
     dateRegistration: {
         type: Date,
         required: true,
-        default: new Date()
+        default: Date.now
     },
     status: {
         type: String,
